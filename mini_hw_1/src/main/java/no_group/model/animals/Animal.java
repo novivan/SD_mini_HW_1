@@ -12,6 +12,11 @@ abstract public class Animal extends Inventory implements IAlive {
     public int Food() {
         return food;
     }
+    @Override
+    public void writeInfo() {
+        System.out.println("Food = " + food);
+        System.out.println("Inventorial number = " + inventorialNumber);
+    }
 
     public Animal() {
         inventorialNumber = inventoriedCounter;

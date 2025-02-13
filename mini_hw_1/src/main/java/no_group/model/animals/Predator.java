@@ -4,3 +4,5 @@ package no_group.model.animals;
 abstract public class Predator extends Animal {
     
 }
+//Пока это выглядит как костыль жесткий, но, 
+//видимо, в последующих дз это будет использовано

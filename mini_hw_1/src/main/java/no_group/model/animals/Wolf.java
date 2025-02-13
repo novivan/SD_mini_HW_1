@@ -16,4 +16,5 @@ public class Wolf extends Predator {
         inventorialNumber = inventorialnumber;
         food = f;
     }
+    //writeInfo сейчас наследуется от класса-родителя Predator (а он от Animal)
 }

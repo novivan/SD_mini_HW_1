@@ -24,4 +24,5 @@ public class Monkey extends Herbo {
         kindness = kndns;
         food = f;
     }
+    //writeInfo сейчас наследуется от класса-родителя Herbo
 }
