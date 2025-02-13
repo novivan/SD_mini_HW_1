@@ -1,10 +1,11 @@
 package no_group.service;
 
+/* было 
+public interface IAlive extends IInventory {
+    int Food();
+}
+*/
+// стало
 public interface IAlive {
     int Food();
-
-    //Кажется, это будет ненжно
-    default boolean isAlive() {
-        return true;
-    }    
 }

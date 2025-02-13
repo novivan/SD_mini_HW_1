@@ -1,11 +1,27 @@
 package no_group.model.animals;
 
 public class Monkey extends Herbo {
-    // Это все пока на вскидку
-    //НАДО БУДЕТ ПЕРЕДЕЛАТЬ
-    @Override
-    public int Food() {
-        System.out.println("I am a monkey and I eat bananas");
-        return 5;
+    public Monkey() {
+        inventorialNumber = inventoriedCounter;
+        inventoriedCounter++;
+    }
+    public Monkey(int fd) {
+        inventorialNumber = inventoriedCounter;
+        inventoriedCounter++;
+        food = fd;
+        kindness = 4;
+    }
+
+    public Monkey(int fd, int kndns) {
+        inventorialNumber = inventoriedCounter++;
+        food = fd;
+        kindness = kndns;
+    }
+
+    //будем считать, что прибавление за нас уже кто-то делает
+    public Monkey(int f, int kndns, int inventorialnumber) {
+        inventorialNumber = inventorialnumber;
+        kindness = kndns;
+        food = f;
     }
 }

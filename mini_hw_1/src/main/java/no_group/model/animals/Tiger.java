@@ -1,14 +1,19 @@
 package no_group.model.animals;
 
 public class Tiger extends Predator {
-
     public Tiger() {
-        
+        inventorialNumber = inventoriedCounter;
+        inventoriedCounter++;
+    }
+    public Tiger(int fd) {
+        inventorialNumber = inventoriedCounter;
+        inventoriedCounter++;
+        food = fd;
     }
 
-    @Override
-    public int Food() {
-        System.out.println("I am a tiger and I eat meat");
-        return 10;
+    //будем считать, что прибавление за нас уже кто-то делает
+    public Tiger(int f, int inventorialnumber) {
+        inventorialNumber = inventorialnumber;
+        food = f;
     }
 }

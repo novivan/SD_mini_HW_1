@@ -2,9 +2,12 @@ package no_group.model.things;
 
 
 public class Computer extends Thing {
-    @Override
-    public int Number () {
-        //тут тоже самое - я не знаю предназначение этого метода
-        return 150;
+    public Computer() {
+        inventorialNumber = inventoriedCounter;
+        inventoriedCounter++;
+    }
+
+    public Computer(int iNumber) {
+        inventorialNumber = iNumber;
     }
 }

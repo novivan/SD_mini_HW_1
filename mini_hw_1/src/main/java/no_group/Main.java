@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println("А теперь для примера создадим какой-то класс и что-нибудь у него спросим");
         // Создаем объект класса
-        Tiger myFirstTigerInJava = new Tiger();
+        Tiger myFirstTigerInJava = new Tiger(15);
         int food = myFirstTigerInJava.Food();
         System.out.println("Сколько еды ест тигр? - " + food);
         
