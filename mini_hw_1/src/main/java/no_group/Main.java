@@ -28,7 +28,7 @@ public class Main {
         try {
             container.register(Zoo.class);
 
-            Zoo zoo = new Zoo();
+            Zoo zoo = container.get(Zoo.class);
 
             System.out.println("Добро пожаловать в наш зоопарк! Вот все опции, которые у нас есть:");
 
