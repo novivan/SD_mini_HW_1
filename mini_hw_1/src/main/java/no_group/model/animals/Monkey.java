@@ -3,18 +3,15 @@ package no_group.model.animals;
 public class Monkey extends Herbo {
     public Monkey() {
         inventorialNumber = inventoriedCounter;
-        //inventoriedCounter++;
     }
     public Monkey(int fd) {
         inventorialNumber = inventoriedCounter;
-        //inventoriedCounter++;
         food = fd;
         kindness = 4;
     }
 
     public Monkey(int fd, int kndns) {
         inventorialNumber = inventoriedCounter;
-        //inventoriedCounter++;
         food = fd;
         kindness = kndns;
     }

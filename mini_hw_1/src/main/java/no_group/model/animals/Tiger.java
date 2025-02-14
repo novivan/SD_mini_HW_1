@@ -3,11 +3,9 @@ package no_group.model.animals;
 public class Tiger extends Predator {
     public Tiger() {
         inventorialNumber = inventoriedCounter;
-        //inventoriedCounter++;
     }
     public Tiger(int fd) {
         inventorialNumber = inventoriedCounter;
-        //inventoriedCounter++;
         food = fd;
     }
 
