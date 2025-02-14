@@ -1,5 +1,6 @@
 package no_group.model.places;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import no_group.model.animals.Animal;
@@ -7,7 +8,12 @@ import no_group.model.animals.Herbo;
 import no_group.service.Inventory;
 
 public class Zoo {
-    //TODO: IMPLEMENT
+    public Zoo() {
+        animals = new ArrayList<Animal>();
+        inventoried = new ArrayList<Inventory>();
+        vet = new Veterinary();
+    }
+
     public void addAnimal(Animal animal) {
         if (vet.checkHealth(animal)) {
             System.out.println("Animal have been added to the zoo successfully");
@@ -34,6 +40,7 @@ public class Zoo {
         for (int i = 0; i < animals.size(); i++) {
             System.out.println("Animal with inventorial number " + animals.get(i).Number() + " consumes " + animals.get(i).Food() + " kilos of food per day");
         }
+        System.out.println("");
     }
     public void generalReport() {
         amountAnimalsReport();
@@ -45,15 +52,27 @@ public class Zoo {
     }
 
     public void listSafeAnimals() {
+        int printed_counter = 0;
         for (int i = 0; i < animals.size(); i++) {
             if (animals.get(i) instanceof Herbo && ((Herbo)animals.get(i)).Kindness() > 5) {
                 animals.get(i).writeInfo();
                 System.out.println("");
+                printed_counter++;
             }
+        }
+        if (printed_counter == 0) {
+            System.out.println("There are no safe animals in the zoo");
+            System.out.println("");
         }
     } 
     
     public void listAllInventoried() {
+        if (inventoried.isEmpty()) {
+            System.out.println("There aro no invetoried animals or tools in the zoo");
+            System.out.println("");
+            return;
+        }
+        System.out.println("There are " + inventoried.size() + " inventoried animals or tools in the zoo");
         for (int i = 0; i < inventoried.size(); i++) {
             inventoried.get(i).writeInfo();
             System.out.println("");

@@ -3,17 +3,18 @@ package no_group.model.animals;
 public class Monkey extends Herbo {
     public Monkey() {
         inventorialNumber = inventoriedCounter;
-        inventoriedCounter++;
+        //inventoriedCounter++;
     }
     public Monkey(int fd) {
         inventorialNumber = inventoriedCounter;
-        inventoriedCounter++;
+        //inventoriedCounter++;
         food = fd;
         kindness = 4;
     }
 
     public Monkey(int fd, int kndns) {
-        inventorialNumber = inventoriedCounter++;
+        inventorialNumber = inventoriedCounter;
+        //inventoriedCounter++;
         food = fd;
         kindness = kndns;
     }
@@ -24,5 +25,11 @@ public class Monkey extends Herbo {
         kindness = kndns;
         food = f;
     }
-    //writeInfo сейчас наследуется от класса-родителя Herbo
+
+    @Override
+    public void writeInfo() {
+        System.out.println("Monkey");
+        super.writeInfo();
+    }
+    
 }

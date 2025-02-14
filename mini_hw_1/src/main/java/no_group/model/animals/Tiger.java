@@ -3,11 +3,11 @@ package no_group.model.animals;
 public class Tiger extends Predator {
     public Tiger() {
         inventorialNumber = inventoriedCounter;
-        inventoriedCounter++;
+        //inventoriedCounter++;
     }
     public Tiger(int fd) {
         inventorialNumber = inventoriedCounter;
-        inventoriedCounter++;
+        //inventoriedCounter++;
         food = fd;
     }
 
@@ -16,5 +16,9 @@ public class Tiger extends Predator {
         inventorialNumber = inventorialnumber;
         food = f;
     }
-    //writeInfo сейчас наследуется от класса-родителя Predator (а он от Animal)
+    @Override
+    public void writeInfo() {
+        System.out.println("Tiger");
+        super.writeInfo();
+    }
 }

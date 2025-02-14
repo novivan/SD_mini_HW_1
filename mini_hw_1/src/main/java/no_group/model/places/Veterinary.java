@@ -4,6 +4,6 @@ import no_group.model.animals.Animal;
 
 public class Veterinary {
     public boolean checkHealth(Animal animal) {
-        return (animal.Food() > 3);
+        return (animal.Food() > 2);
     }
 }
