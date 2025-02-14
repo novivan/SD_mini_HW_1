@@ -8,7 +8,6 @@ public class Table extends Thing {
 
     public Table() {
         inventorialNumber = inventoriedCounter;
-        inventoriedCounter++;
     }
 
     public Table(int iNumber) {

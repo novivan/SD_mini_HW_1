@@ -7,11 +7,19 @@ import no_group.model.animals.Animal;
 import no_group.model.animals.Herbo;
 import no_group.service.Inventory;
 
+import no_group.di.SimpleContainer;
+
 public class Zoo {
     public Zoo() {
         animals = new ArrayList<Animal>();
         inventoried = new ArrayList<Inventory>();
         vet = new Veterinary();
+    }
+
+    public Zoo(Veterinary vt) {
+        animals = new ArrayList<> ();
+        inventoried = new ArrayList<> ();
+        vet = vt;
     }
 
     public void addAnimal(Animal animal) {
