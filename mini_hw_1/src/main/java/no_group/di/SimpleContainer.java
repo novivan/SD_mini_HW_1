@@ -50,4 +50,31 @@ public class SimpleContainer {
     public <T> T get(Class<T> clas) {
         return clas.cast(instances.get(clas));
     }
+
+    // Метод resolve всегда создаёт новый экземпляр класса с его зависимостями
+    public <T> T resolve(Class<T> clazz) throws Exception {
+        Constructor<?>[] constructors = clazz.getConstructors();
+        if (constructors.length == 0) {
+            constructors = clazz.getDeclaredConstructors();
+        }
+        
+        // Выбираем конструктор с наибольшим количеством параметров
+        Constructor<?> selected = constructors[0];
+        for (Constructor<?> c : constructors) {
+            if (c.getParameterCount() > selected.getParameterCount()) {
+                selected = c;
+            }
+        }
+        if (!selected.isAccessible()) {
+            selected.setAccessible(true);
+        }
+        Class<?>[] paramTypes = selected.getParameterTypes();
+        Object[] dependencies = new Object[paramTypes.length];
+        // Рекурсивно создаем зависимости
+        for (int i = 0; i < paramTypes.length; i++) {
+            dependencies[i] = resolve(paramTypes[i]);
+        }
+        Object instance = selected.newInstance(dependencies);
+        return clazz.cast(instance);
+    }
 }
